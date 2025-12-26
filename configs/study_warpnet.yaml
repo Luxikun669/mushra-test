@@ -34,7 +34,6 @@ pages:
       showWaveform: false
       enableLooping: true
       stimuli:
-        Hidden_Ref: "configs/resources/audio/warpnet/sample_01/ref.wav"
         Anchor:     "configs/resources/audio/warpnet/sample_01/anchor.wav"
         C1:   "configs/resources/audio/warpnet/sample_01/c1.wav"
         C2: "configs/resources/audio/warpnet/sample_01/c2.wav"
@@ -52,7 +51,6 @@ pages:
       showWaveform: false
       enableLooping: true
       stimuli:
-        Hidden_Ref: "configs/resources/audio/warpnet/sample_02/ref.wav"
         Anchor:     "configs/resources/audio/warpnet/sample_02/anchor.wav"
         C1:   "configs/resources/audio/warpnet/sample_02/c1.wav"
         C2: "configs/resources/audio/warpnet/sample_02/c2.wav"
