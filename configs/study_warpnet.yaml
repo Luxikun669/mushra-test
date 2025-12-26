@@ -1,4 +1,4 @@
-testname: "WarpNet V2"
+testname: "WarpNet V3"
 testId: "exp_group_a_warpnet"
 bufferSize: 4096
 stopOnErrors: true
