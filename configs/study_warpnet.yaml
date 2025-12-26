@@ -47,7 +47,7 @@ pages:
       name: "测试 2 (语音)"
       content: "请对比各个滑块的声音..."
       reference: "configs/resources/audio/warpnet/sample_02/ref.wav"
-      createAnchor35: true
+      createAnchor35: false
       createAnchor70: false
       showWaveform: false
       enableLooping: true
