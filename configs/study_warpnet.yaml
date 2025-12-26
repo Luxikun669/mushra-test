@@ -1,6 +1,6 @@
 testname: "WarpNet 听觉实验"
 testId: "exp_group_a_warpnet"
-bufferSize: 2048
+bufferSize: 4096
 stopOnErrors: true
 showButtonPreviousPage: true
 # remoteService: service/write.php  <-- 注释掉或删除，因为用不到
