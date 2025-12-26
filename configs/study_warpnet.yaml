@@ -50,6 +50,8 @@ pages:
       reference: "configs/resources/audio/warpnet/sample_02/ref.wav"
       createAnchor35: false
       createAnchor70: false
+      showWaveform: false  # 双耳实验通常不看波形，以免产生视觉干扰，你可以按需开启
+      enableLooping: true
       stimuli:
         Hidden_Ref: "configs/resources/audio/warpnet/sample_02/ref.wav"
         Anchor:     "configs/resources/audio/warpnet/sample_02/anchor.wav"
