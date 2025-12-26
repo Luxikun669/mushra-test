@@ -28,36 +28,35 @@ pages:
       id: trial_01
       name: "测试 1 (语音)"
       content: "请对比各个滑块的声音，评价其<b>空间感</b>与 Reference 的相似度。"
-      reference: "configs/resources/audio/warpNet/sample_01/ref.wav"
+      reference: "configs/resources/audio/warpnet/sample_01/ref.wav"
       # 关闭自动锚点，使用自定义的单声道锚点
       createAnchor35: false
       createAnchor70: false
       showWaveform: false  # 双耳实验通常不看波形，以免产生视觉干扰，你可以按需开启
       enableLooping: true
       stimuli:
-        Hidden_Ref: "configs/resources/audio/warpNet/sample_01/ref.wav"
-        Anchor:     "configs/resources/audio/warpNet/sample_01/anchor.wav"
-        C1:   "configs/resources/audio/warpNet/sample_01/c1.wav"
-        C2: "configs/resources/audio/warpNet/sample_01/c2.wav"
-        C3:       "configs/resources/audio/warpNet/sample_01/c3.wav"
-        C4:       "configs/resources/audio/warpNet/sample_01/c4.wav"
+        Hidden_Ref: "configs/resources/audio/warpnet/sample_01/ref.wav"
+        Anchor:     "configs/resources/audio/warpnet/sample_01/anchor.wav"
+        C1:   "configs/resources/audio/warpnet/sample_01/c1.wav"
+        C2: "configs/resources/audio/warpnet/sample_01/c2.wav"
+        C3:       "configs/resources/audio/warpnet/sample_01/c3.wav"
+        C4:       "configs/resources/audio/warpnet/sample_01/c4.wav"
 
     # 样本 2
     - type: mushra
       id: trial_02
       name: "测试 2 (语音)"
       content: "请对比各个滑块的声音..."
-      reference: "configs/resources/audio/warpNet/sample_02/ref.wav"
+      reference: "configs/resources/audio/warpnet/sample_02/ref.wav"
       createAnchor35: false
       createAnchor70: false
       stimuli:
-        Hidden_Ref: "configs/resources/audio/warpNet/sample_02/ref.wav"
-        Anchor:     "configs/resources/audio/warpNet/sample_02/anchor.wav"
-        C1:   "configs/resources/audio/warpNet/sample_02/c1.wav"
-        C2: "configs/resources/audio/warpNet/sample_02/c2.wav"
-        C3:       "configs/resources/audio/warpNet/sample_02/c3.wav"
-        C4:       "configs/resources/audio/warpNet/sample_02/c4.wav"
-
+        Hidden_Ref: "configs/resources/audio/warpnet/sample_02/ref.wav"
+        Anchor:     "configs/resources/audio/warpnet/sample_02/anchor.wav"
+        C1:   "configs/resources/audio/warpnet/sample_02/c1.wav"
+        C2: "configs/resources/audio/warpnet/sample_02/c2.wav"
+        C3:       "configs/resources/audio/warpnet/sample_02/c3.wav"
+        C4:       "configs/resources/audio/warpnet/sample_02/c4.wav"
     # ... 继续添加更多样本 ...
 
   # --- 3. 结束页 ---
