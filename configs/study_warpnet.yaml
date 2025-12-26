@@ -65,8 +65,9 @@ pages:
   - type: finish
     name: "实验结束"
     content: "感谢您的参与！请务必点击下方的 <b>Download</b> 按钮保存数据，并发送给研究人员。"
-    showResults: true    # 允许下载
+    showResults: false    : fa'l
     writeResults: false  # 禁止自动上传（避免报错）
+    nextPageButtonText: "Download CSV"
     questionnaire:
       - type: text
         label: "姓名/昵称"
