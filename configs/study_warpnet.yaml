@@ -1,0 +1,81 @@
+testname: "WarpNet 听觉实验"
+testId: "exp_group_a_warpnet"
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+# remoteService: service/write.php  <-- 注释掉或删除，因为用不到
+
+pages:
+  # --- 1. 欢迎页 ---
+  - type: generic
+    id: page_welcome
+    name: "实验说明"
+    content: |
+      <h3>欢迎参加听觉主观评测</h3>
+      <p>本次实验大约需要 15-20 分钟。</p>
+      <ul>
+        <li><b>请务必佩戴耳机</b>进行测试（推荐有线耳机）。</li>
+        <li>任务是评价待测音频与参考音频（Reference）的<b>空间真实感</b>接近程度。</li>
+        <li>实验结束后，请点击<b>"Download Results"</b>按钮，将文件发送给组织者。</li>
+      </ul>
+
+  # --- 2. 随机测试部分 (把所有题目放在 random 下面) ---
+  - 
+    - random
+    
+    # 样本 1
+    - type: mushra
+      id: trial_01
+      name: "测试 1 (语音)"
+      content: "请对比各个滑块的声音，评价其<b>空间感</b>与 Reference 的相似度。"
+      reference: "configs/resources/audio/warpNet/sample_01/ref.wav"
+      # 关闭自动锚点，使用自定义的单声道锚点
+      createAnchor35: false
+      createAnchor70: false
+      showWaveform: false  # 双耳实验通常不看波形，以免产生视觉干扰，你可以按需开启
+      enableLooping: true
+      stimuli:
+        Hidden_Ref: "configs/resources/audio/warpNet/sample_01/ref.wav"
+        Anchor:     "configs/resources/audio/warpNet/sample_01/anchor.wav"
+        C1:   "configs/resources/audio/warpNet/sample_01/c1.wav"
+        C2: "configs/resources/audio/warpNet/sample_01/c2.wav"
+        C3:       "configs/resources/audio/warpNet/sample_01/c3.wav"
+        C4:       "configs/resources/audio/warpNet/sample_01/c4.wav"
+
+    # 样本 2
+    - type: mushra
+      id: trial_02
+      name: "测试 2 (语音)"
+      content: "请对比各个滑块的声音..."
+      reference: "configs/resources/audio/warpNet/sample_02/ref.wav"
+      createAnchor35: false
+      createAnchor70: false
+      stimuli:
+        Hidden_Ref: "configs/resources/audio/warpNet/sample_02/ref.wav"
+        Anchor:     "configs/resources/audio/warpNet/sample_02/anchor.wav"
+        C1:   "configs/resources/audio/warpNet/sample_02/c1.wav"
+        C2: "configs/resources/audio/warpNet/sample_02/c2.wav"
+        C3:       "configs/resources/audio/warpNet/sample_02/c3.wav"
+        C4:       "configs/resources/audio/warpNet/sample_02/c4.wav"
+
+    # ... 继续添加更多样本 ...
+
+  # --- 3. 结束页 ---
+  - type: finish
+    name: "实验结束"
+    content: "感谢您的参与！请务必点击下方的 <b>Download</b> 按钮保存数据，并发送给研究人员。"
+    showResults: true    # 允许下载
+    writeResults: false  # 禁止自动上传（避免报错）
+    questionnaire:
+      - type: text
+        label: "姓名/昵称"
+        name: "username"
+      - type: number
+        label: "年龄"
+        name: "age"
+        min: 10
+        max: 100
+        default: 25
+      - type: text
+        label: "使用的耳机型号 (例如: AirPods Pro, 索尼MDR7506)"
+        name: "headphone"
