@@ -1,4 +1,4 @@
-testname: "WarpNet V1"
+testname: "WarpNet V2"
 testId: "exp_group_a_warpnet"
 bufferSize: 4096
 stopOnErrors: true
@@ -29,13 +29,13 @@ pages:
       name: "测试 1 (语音)"
       content: "请对比各个滑块的声音，评价其<b>空间感</b>与 Reference 的相似度。"
       reference: "configs/resources/audio/warpnet/sample_01/ref.wav"
-      createAnchor35: true
+      createAnchor35: false
       createAnchor70: false
-      showWaveform: false  # 双耳实验通常不看波形，以免产生视觉干扰，你可以按需开启
+      showWaveform: false
       enableLooping: true
       stimuli:
         Hidden_Ref: "configs/resources/audio/warpnet/sample_01/ref.wav"
-        # Anchor:     "configs/resources/audio/warpnet/sample_01/anchor.wav"
+        Anchor:     "configs/resources/audio/warpnet/sample_01/anchor.wav"
         C1:   "configs/resources/audio/warpnet/sample_01/c1.wav"
         C2: "configs/resources/audio/warpnet/sample_01/c2.wav"
         C3:       "configs/resources/audio/warpnet/sample_01/c3.wav"
@@ -49,11 +49,11 @@ pages:
       reference: "configs/resources/audio/warpnet/sample_02/ref.wav"
       createAnchor35: true
       createAnchor70: false
-      showWaveform: false  # 双耳实验通常不看波形，以免产生视觉干扰，你可以按需开启
+      showWaveform: false
       enableLooping: true
       stimuli:
         Hidden_Ref: "configs/resources/audio/warpnet/sample_02/ref.wav"
-        # Anchor:     "configs/resources/audio/warpnet/sample_02/anchor.wav"
+        Anchor:     "configs/resources/audio/warpnet/sample_02/anchor.wav"
         C1:   "configs/resources/audio/warpnet/sample_02/c1.wav"
         C2: "configs/resources/audio/warpnet/sample_02/c2.wav"
         C3:       "configs/resources/audio/warpnet/sample_02/c3.wav"
@@ -64,8 +64,8 @@ pages:
   - type: finish
     name: "实验结束"
     content: "感谢您的参与！请务必点击下方的 <b>Download</b> 按钮保存数据，并发送给研究人员。"
-    showResults: false 
-    writeResults: false  # 禁止自动上传（避免报错）
+    showResults: false
+    writeResults: false
     nextPageButtonText: "Download CSV"
     questionnaire:
       - type: text
