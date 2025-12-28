@@ -1,0 +1,131 @@
+testname: "WarpNet V1"
+testId: "exp_group_a_warpnet"
+bufferSize: 4096
+stopOnErrors: true
+showButtonPreviousPage: true
+# remoteService: service/write.php  <-- 注释掉或删除，因为用不到
+
+pages:
+  # --- 1. 欢迎页 ---
+  - type: generic
+    id: page_welcome
+    name: "实验说明"
+    content: |
+      <h3>欢迎参加听觉主观评测</h3>
+      <p>本次实验大约需要 15-20 分钟。</p>
+      <ul>
+        <li><b>请务必佩戴耳机</b>进行测试（推荐有线耳机）。</li>
+        <li>任务是评价待测音频与参考音频（Reference）的<b>音质/音色</b>接近程度。</li>
+        <li>实验结束后，请点击<b>"Download Results"</b>按钮，将文件下载至本地并发送给组织者。</li>
+        <li>为保证实验结束，可以顺利将实验结果下载至本地，请务必保证浏览器处于<b>无痕</b>模式，否则可能会导致结果无法顺利下载。</li>
+      </ul>
+
+  # --- 2. 随机测试部分 (把所有题目放在 random 下面) ---
+  - 
+    - random
+    
+    # 样本 1
+    - type: mushra
+      id: trial_01
+      name: "测试 (语音)"
+      content: "请对比各个滑块的声音，评价其<b>声音的清晰度、是否有杂音或失真</b>。"
+      reference: "configs/resources/audio/warpnet/sample_01/ref.wav"
+      createAnchor35: false
+      createAnchor70: false
+      showWaveform: false
+      enableLooping: true
+      stimuli:
+        Anchor:     "configs/resources/audio/warpnet/sample_01/anchor.wav"
+        C1:   "configs/resources/audio/warpnet/sample_01/c1.wav"
+        C2: "configs/resources/audio/warpnet/sample_01/c2.wav"
+        C3:       "configs/resources/audio/warpnet/sample_01/c3.wav"
+        C4:       "configs/resources/audio/warpnet/sample_01/c4.wav"
+
+    # 样本 2
+    - type: mushra
+      id: trial_02
+      name: "测试 (语音)"
+      content: "请对比各个滑块的声音，评价其<b>声音的清晰度、是否有杂音或失真</b>。"
+      reference: "configs/resources/audio/warpnet/sample_02/ref.wav"
+      createAnchor35: false
+      createAnchor70: false
+      showWaveform: false
+      enableLooping: true
+      stimuli:
+        Anchor:     "configs/resources/audio/warpnet/sample_02/anchor.wav"
+        C1:   "configs/resources/audio/warpnet/sample_02/c1.wav"
+        C2: "configs/resources/audio/warpnet/sample_02/c2.wav"
+        C3:       "configs/resources/audio/warpnet/sample_02/c3.wav"
+        C4:       "configs/resources/audio/warpnet/sample_02/c4.wav"
+
+    # 样本 3
+    - type: mushra
+      id: trial_03
+      name: "测试 (语音)"
+      content: "请对比各个滑块的声音，评价其<b>声音的清晰度、是否有杂音或失真</b>。"
+      reference: "configs/resources/audio/warpnet/sample_03/ref.wav"
+      createAnchor35: false
+      createAnchor70: false
+      showWaveform: false
+      enableLooping: true
+      stimuli:
+        Anchor:     "configs/resources/audio/warpnet/sample_03/anchor.wav"
+        C1:   "configs/resources/audio/warpnet/sample_03/c1.wav"
+        C2: "configs/resources/audio/warpnet/sample_03/c2.wav"
+        C3:       "configs/resources/audio/warpnet/sample_03/c3.wav"
+        C4:       "configs/resources/audio/warpnet/sample_03/c4.wav"
+
+    # 样本 4
+    - type: mushra
+      id: trial_04
+      name: "测试 (语音)"
+      content: "请对比各个滑块的声音，评价其<b>声音的清晰度、是否有杂音或失真</b>。"
+      reference: "configs/resources/audio/warpnet/sample_04/ref.wav"
+      createAnchor35: false
+      createAnchor70: false
+      showWaveform: false
+      enableLooping: true
+      stimuli:
+        Anchor:     "configs/resources/audio/warpnet/sample_04/anchor.wav"
+        C1:   "configs/resources/audio/warpnet/sample_04/c1.wav"
+        C2: "configs/resources/audio/warpnet/sample_04/c2.wav"
+        C3:       "configs/resources/audio/warpnet/sample_04/c3.wav"
+        C4:       "configs/resources/audio/warpnet/sample_04/c4.wav"
+
+    # 样本 5
+    - type: mushra
+      id: trial_05
+      name: "测试 (语音)"
+      content: "请对比各个滑块的声音，评价其<b>声音的清晰度、是否有杂音或失真</b>。"
+      reference: "configs/resources/audio/warpnet/sample_05/ref.wav"
+      createAnchor35: false
+      createAnchor70: false
+      showWaveform: false
+      enableLooping: true
+      stimuli:
+        Anchor:     "configs/resources/audio/warpnet/sample_05/anchor.wav"
+        C1:   "configs/resources/audio/warpnet/sample_05/c1.wav"
+        C2: "configs/resources/audio/warpnet/sample_05/c2.wav"
+        C3:       "configs/resources/audio/warpnet/sample_05/c3.wav"
+        C4:       "configs/resources/audio/warpnet/sample_05/c4.wav"
+        
+  # --- 3. 结束页 ---
+  - type: finish
+    name: "实验结束"
+    content: "感谢您的参与！请务必点击下方的 <b>Download Results</b> 按钮保存数据，并发送给研究人员。"
+    showResults: false
+    writeResults: false
+    #nextPageButtonText: "Download CSV"
+    questionnaire:
+      - type: text
+        label: "姓名"
+        name: "username"
+      - type: number
+        label: "年龄"
+        name: "age"
+        min: 10
+        max: 100
+        default: 25
+      - type: text
+        label: "使用的耳机型号 (如: AirPods Pro, 索尼MDR7506)"
+        name: "headphone"
