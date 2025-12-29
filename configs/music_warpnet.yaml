@@ -42,7 +42,7 @@ pages:
         min: 0
         max: 100
         step: 1
-        value: 50         # 初始位置
+        default: 50         # 初始位置
         vertical: true    # true=竖着放(像MUSHRA), false=横着放
 
   # --- 如果有第二首歌，复制上面的 block 修改路径即可 ---
