@@ -1,4 +1,4 @@
-testname: "音乐空间感偏好测试"
+testname: "音乐空间感偏好测试 V0"
 testId: "music_preference_test"
 bufferSize: 4096
 stopOnErrors: true
@@ -43,7 +43,7 @@ pages:
         max: 100
         step: 1
         default: 50         # 初始位置
-        vertical: true    # true=竖着放(像MUSHRA), false=横着放
+        #vertical: true    # true=竖着放(像MUSHRA), false=横着放
 
   # --- 如果有第二首歌，复制上面的 block 修改路径即可 ---
 
