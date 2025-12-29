@@ -6,7 +6,7 @@ testId: lms_4scale
 bufferSize: 2048
 stopOnErrors: true
 showButtonPreviousPage: true
-remoteService: service/write.php
+#remoteService: service/write.php
 
 
 
@@ -17,9 +17,9 @@ pages:
       name: likert
       content: test description
       stimuli:
-          C1: configs/resources/audio/mono_c1.wav
-          C2: configs/resources/audio/mono_c2.wav
-          C3: configs/resources/audio/mono_c3.wav
+          C1: configs/resources/audio/warpnet/sample_01/c1.wav
+          C2: configs/resources/audio/warpnet/sample_01/c2.wav
+          C3: configs/resources/audio/warpnet/sample_01/c3.wav
       response:
         - value: not at all
           label: Not at all
@@ -47,4 +47,4 @@ pages:
       name: Thank you
       content: Thank you for attending
       showResults: true
-      writeResults: true
+      writeResults: false
