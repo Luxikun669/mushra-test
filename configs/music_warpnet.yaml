@@ -1,0 +1,67 @@
+testname: "音乐空间感偏好测试"
+testId: "music_preference_test"
+bufferSize: 4096
+stopOnErrors: true
+showButtonPreviousPage: true
+
+pages:
+  - type: generic
+    id: welcome
+    name: "实验说明"
+    content: |
+      <h3>音乐场景测试</h3>
+      <p>本环节没有标准参考音频（Reference）。</p>
+      <p>请试听以下 5 个音频片段，对比它们在<b>空间真实感</b>上的表现。</p>
+      <p>请给出 0-100 的评分：</p>
+      <ul>
+        <li><b>100</b> = 空间感极其真实/自然</li>
+        <li><b>0</b> = 空间感完全错误/单声道</li>
+      </ul>
+
+  - type: likert_multi_stimulus
+    id: music_trial_01
+    name: "Music Scene 1"
+    content: "请对比以下 5 个样本，并进行打分。"
+    showWaveform: false  # 音乐测试通常关掉波形，减少干扰
+    randomize: true      # 随机打乱滑块顺序 (这是必须的！)
+    
+    # 这里列出你的 5 个音频 (4个模型 + 1个Anchor)
+    stimuli:
+      Model_A: "configs/resources/audio/warpnet/sample_01/c1.wav"
+      Model_B: "configs/resources/audio/warpnet/sample_01/c2.wav"
+      Model_C: "configs/resources/audio/warpnet/sample_01/c3.wav"
+      Model_D: "configs/resources/audio/warpnet/sample_01/c4.wav"
+      # 手动制作的 Anchor (单声道低通)，作为质量下限参考
+      Anchor:  "configs/resources/audio/warpnet/sample_01/anchor.wav"
+
+    # 定义评分条 (模拟 MUSHRA 的 0-100 滑块)
+    response:
+      - type: slider
+        name: "spatial_quality"
+        label: "空间质量 (0-100)"
+        min: 0
+        max: 100
+        step: 1
+        value: 50         # 初始位置
+        vertical: true    # true=竖着放(像MUSHRA), false=横着放
+
+  # --- 如果有第二首歌，复制上面的 block 修改路径即可 ---
+
+  - type: finish
+    name: "实验结束"
+    # 这里继续使用之前的下载功能配置...
+    showResults: false
+    writeResults: false
+    questionnaire:
+      - type: text
+        label: "姓名"
+        name: "username"
+      - type: number
+        label: "年龄"
+        name: "age"
+        min: 10
+        max: 100
+        default: 25
+      - type: text
+        label: "使用的耳机型号 (如: AirPods Pro, 索尼MDR7506)"
+        name: "headphone"
